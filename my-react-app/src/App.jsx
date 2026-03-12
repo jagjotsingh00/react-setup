@@ -8,7 +8,7 @@ function App() {
   return (
     <>
     <Header />
-    <table>
+    {/* <table>
       <tr>
       <th>Name</th>
       <th>Class</th>
@@ -17,7 +17,7 @@ function App() {
         <td>Jagjot </td>
         <td>MCA</td>
       </tr>
-    </table>
+    </table> */}
     <Footer />
     </>
   )
