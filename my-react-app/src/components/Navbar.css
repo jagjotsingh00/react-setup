@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    height: 70px;
+    width: 100%;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar img {
+    height: 50px;
+}
+.navbar i {
+    font-size: 30px;
+}
+.navbar input {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    border: 1px solid black;
+    width: 200px;
+    height: 30px;
+}
+.navbar input::placeholder {
+  color: black;
+  text-align: center;
+}

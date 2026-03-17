@@ -1,4 +1,8 @@
 .btn {
-    background-color: black ;
-    color: white;
+    background-color: antiquewhite ;
+    color: #000;
+    height: 30px;
+    width: 70px;
+    border: 1px solid black;
+    border-radius: 20px;
 }

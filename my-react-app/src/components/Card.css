@@ -1,4 +1,21 @@
 .card{
-    height : 100px ;
-    background-color: red;
+     height : 420px ;
+    width: 300px;
+    background-color:skyblue;
+    color: black;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 20px;
+}
+.card img {
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+}
+.cards {
+    display: flex;
+    justify-content: space-between;
 }

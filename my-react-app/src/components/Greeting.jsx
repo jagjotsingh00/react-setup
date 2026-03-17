@@ -1,12 +1,12 @@
 import './Greeting.css'
-const Greeting = () => {
+const Greeting = ({name,age}) => {
    
     return (
         <>
          <div>
-            <p className="text">Hello, Good Morning!</p>
+            <h2 className="text">Hello, {name}! Good Morning</h2>
+            <h2>MY age is {age}</h2>
          </div>
-         <div className='card'></div>
         </>
     )
 }

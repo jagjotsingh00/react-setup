@@ -1,17 +1,15 @@
-// import Button from "./Button"
-// import Greeting from "./Greeting"
-// import Card from "./card"
+import Greeting from "./Greeting"
+import Parent from "./Parent"
 
-// const Header = () => {
-//     return (
-//     <>
-//         <h1>This is header component</h1>x
-//         <Greeting />
-//         <Button />
-//         <card className="card" />
+const Header = () => {
+    // let name = prompt("enter your name");
+    return (
+    <>
+        <h1>This is header component</h1>
+        <Greeting name = "Jagjot singh" age = {23} />  
+        <Parent />
+    </>
+    )
+}
 
-//     </>
-//     )
-// }
-
-// export default Header
+export default Header 
