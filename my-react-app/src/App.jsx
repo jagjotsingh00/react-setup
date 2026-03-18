@@ -12,25 +12,23 @@ import Toggle from './components/Toggle'
 function App() {
 
   return (
-  //   <>
-  //   <Navbar />
-  //   <br />
-  //   <Header />
-  //   <br />
-  //  <div className='cards'>
-  //       <Card />
-  //       <Card />
-  //       <Card />
-  //   </div>
-  //   <br />
-  //   <Count />
-  //   {/* <Input /> */}
-  //   <Footer />
-
-  //   </>
-  <>
-  <Toggle />
-  </>
+    <>
+    <Navbar />
+    <br />
+    <Header />
+    <br />
+   <div className='cards'>
+        <Card />
+        <Card />
+        <Card />
+    </div>
+    <br />
+    <Count />
+    {/* <Input /> */}
+    <Footer />
+<Toggle />
+    </>
+  
   )
 
   
