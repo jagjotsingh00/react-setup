@@ -3,7 +3,7 @@ const Footer = () => {
 
     return (
         <>
-        <FruitList />
+        {/* <FruitList /> */}
         <h1>This is footer Component</h1>
         </>
     )

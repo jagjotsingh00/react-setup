@@ -8,6 +8,7 @@ import Count from './components/Counter'
 import Input from './components/Input'
 import { useState } from 'react'
 import Toggle from './components/Toggle'
+import ToggleButton from './components/ToggleButton'
 
 function App() {
 
@@ -25,13 +26,15 @@ function App() {
     <br />
     <Count />
     {/* <Input /> */}
-    <Footer />
+    <br /><br />
 <Toggle />
+<br />
+<br />
+<ToggleButton />
+<br /><br />
+    <Footer />
     </>
-  
   )
-
-  
 }
 
 export default App

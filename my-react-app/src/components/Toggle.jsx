@@ -5,7 +5,7 @@ const Toggle = () => {
     
     let message;
     if(show) {
-            message = <span>Hello World!!</span>
+            message = <h1>Hello World!!</h1>
     }
    
     return (
