@@ -35,7 +35,11 @@ const TodoList = () => {
             <ul>
             {task.map((x,i) => (
                 <li key={i}>{x}
-                 <button onClick={() => remove(i)}>Delete</button>
+                 <span>
+                <input type="checkbox"></input>
+                <button><i class="fa-solid fa-pen-to-square"></i></button>
+                <button onClick={() => remove(i)}><i class="fa-solid fa-trash"></i></button>
+                </span>
                 </li>
             ))}
            </ul>
