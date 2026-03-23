@@ -1,23 +1,24 @@
 import './App.css'
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/Header'
 import Card from './components/card'
-import Navbar from './components/navbar'
 import Footer from './components/Footer'
 import Greeting from './components/Greeting'
 import Count from './components/Counter'
 import Input from './components/Input'
-import { useState } from 'react'
 import Toggle from './components/Toggle'
 import ToggleButton from './components/ToggleButton'
 import AddUser from './components/AddUser'
 import ProductList from './components/Product'
 import TodoList from './components/TodoList'
-
+import SubTasks from './components/SubTasks';
+import Navbar from './components/Navbar'
+import StudentList from './components/UseEffect1'
 function App() {
 
   return (
     <>
-       {/* <Navbar />
+       <Navbar />
       <br />
  ============================================================================================= 
        <Header /> 
@@ -52,10 +53,10 @@ function App() {
 <br />
 =============================================================================================
       <Footer />
-============================================================================================= */}
-<TodoList />
-    </>
+=============================================================================================
+<StudentList />
+</>
   )
 }
 
-export default App
+export default App ;

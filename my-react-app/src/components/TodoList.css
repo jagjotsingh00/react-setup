@@ -4,27 +4,28 @@
     box-sizing: border-box;
 }
 
-body {
+/* body {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #74ebd5, #9face6);
-}
+    background: linear-gradient(135deg, #8b5e3c, #d2b48c);
+} */
 
 form {
     width: 500px;
     padding: 30px;
-    background: #ffffff;
+    background: #fffaf5;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    box-shadow: 0 8px 20px rgba(101, 67, 33, 0.15);
 }
 
 form h1 {
-    color: #333;
+    color: #5c4033;
     font-size: 28px;
 }
 
@@ -34,37 +35,39 @@ form div {
     justify-content: space-between;
 }
 
-form input {
+form > div input[type="text"] {
     flex: 1;
     padding: 10px;
     border-radius: 8px;
-    border: 2px solid #ddd;
+    border: 2px solid #c4a484;
     outline: none;
     transition: 0.3s;
     font-size: 14px;
 }
 
-form input {
-    border-color: #6c63ff;
-    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+form > div input[type="text"]:focus {
+    border-color: #8b5e3c;
+    box-shadow: 0 0 5px rgba(139, 94, 60, 0.5);
 }
 
 form input::placeholder {
-    color: #aaa;
+    color: #a1887f;
 }
 
 form button {
-    padding: 10px ;
+    padding: 10px;
     margin-left: 10px;
     border: none;
     border-radius: 8px;
-    background: #6c63ff;
+    background: #8b5e3c;
     color: white;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 form button:hover {
-    background: #574fd6;
+    background: #6f4a2d;
 }
 
 ul {
@@ -73,12 +76,32 @@ ul {
 }
 
 ul li {
-    background: #e5e8f2a2;
+    background: #f3e5d8;
     padding: 12px;
     margin-top: 10px;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    color: #3e2723;
+}
 
+ul li input {
+    height: 30px;
+    width: 30px;
+}
+
+ul li input[type="checkbox"] {
+    height: 30px;
+    width: 30px;
+    margin: 0;
+    vertical-align: middle;
+    accent-color: #8b5e3c;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #6d4c41; 
 }
