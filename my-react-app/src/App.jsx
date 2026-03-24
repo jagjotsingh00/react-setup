@@ -13,7 +13,8 @@ import ProductList from './components/Product'
 import TodoList from './components/TodoList'
 import SubTasks from './components/SubTasks';
 import Navbar from './components/Navbar'
-import StudentList from './components/UseEffect1'
+// import StudentList from './components/UseEffect1'
+import LifeCyclePractice from './components/LifeCycleTask'
 function App() {
 
   return (
@@ -54,7 +55,11 @@ function App() {
 =============================================================================================
       <Footer />
 =============================================================================================
-<StudentList />
+{/* <StudentList /> */}
+<br /><br />
+=============================================================================================
+<br />
+<LifeCyclePractice productId={3}/>
 </>
   )
 }
