@@ -15,11 +15,13 @@ import SubTasks from './components/SubTasks';
 import Navbar from './components/Navbar'
 // import StudentList from './components/UseEffect1'
 import LifeCyclePractice from './components/LifeCycleTask'
+import UseRefTutorial from './components/UseRefTutorial'
+import UseRefPractice from './components/UseRefPractice'
 function App() {
 
   return (
     <>
-       <Navbar />
+       {/* <Navbar />
       <br />
  ============================================================================================= 
        <Header /> 
@@ -55,11 +57,16 @@ function App() {
 =============================================================================================
       <Footer />
 =============================================================================================
-{/* <StudentList /> */}
+<StudentList />
 <br /><br />
 =============================================================================================
 <br />
 <LifeCyclePractice productId={3}/>
+<br />
+<br />
+============================================================================================= */}
+{/* <UseRefTutorial /> */}
+<UseRefPractice/>
 </>
   )
 }
