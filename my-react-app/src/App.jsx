@@ -65,8 +65,8 @@ function App() {
 <br />
 <br />
 ============================================================================================= */}
-{/* <UseRefTutorial /> */}
-<UseRefPractice/>
+<UseRefTutorial />
+{/* <UseRefPractice/> */}
 </>
   )
 }

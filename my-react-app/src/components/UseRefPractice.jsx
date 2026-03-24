@@ -13,6 +13,36 @@ const UsePracticeRef = () => {
             <button onClick={inputHandle}>Focus On Input Fuild</button>
         </>
     )
+
+    // ====================================================================================================
+    // TASK 2 
+
+    function UnControlledInput() {
+        const nameRef = useRef(null);
+        const mailRef = useRef(null);
+
+
+
+        return (
+            <div>
+                <h3>Example 2: Uncontrolled Form (useRef)</h3>
+                <form onSubmit={handleSubmit}>
+                    <input type ="username"
+                    placeholder="Username"
+                    style={style.input} />
+
+                    <input type="email"
+                    placeholder="Email"
+                    style={style.input} />
+                    <button type="submit" style={Style.submit}>Submit</button>
+                </form>
+            </div>
+        )
+    }
+
+    
 }
+
+
 
 export default UsePracticeRef;
