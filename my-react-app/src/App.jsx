@@ -16,7 +16,9 @@ import Navbar from './components/Navbar'
 // import StudentList from './components/UseEffect1'
 import LifeCyclePractice from './components/LifeCycleTask'
 import UseRefTutorial from './components/UseRefTutorial'
-import UseRefPractice from './components/UseRefPractice'
+import UseRefPractice, { FocusManagement, PreviousValue, RefVsState, VideoPlayer } from './components/UseRefPractice'
+import { UnControlledInput } from './components/UseRefPractice'
+import useFetch from './components/useFetch'
 function App() {
 
   return (
@@ -65,8 +67,22 @@ function App() {
 <br />
 <br />
 ============================================================================================= */}
-<UseRefTutorial />
-{/* <UseRefPractice/> */}
+{/* <UseRefTutorial /> */}
+=============================================================================================
+{/* <UseRefPractice/>
+=============================================================================================
+<UnControlledInput />
+=============================================================================================
+<PreviousValue />
+=============================================================================================
+<RefVsState />
+=============================================================================================
+<FocusManagement />
+=============================================================================================
+<VideoPlayer />
+=============================================================================================
+<useFetch /> */}
+<Count />
 </>
   )
 }
