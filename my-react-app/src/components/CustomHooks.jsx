@@ -11,7 +11,9 @@ function useCount(initialValue = 0) {
 
 export {useCount}
 
-function useFetch() {
+function useFetch(url) {
+
+
     const [data,setData] = useState(null);
     const [loading,setLoading] = useState(true);
     const [error,setError] = useState(null);
@@ -26,7 +28,7 @@ function useFetch() {
             if(!response.ok) throw new Error('Failed to Fetch data')
             return response.json();
         })
-        .then(() => {
+        .then((data) => {
             setData(data);
             setError(null);
         })
