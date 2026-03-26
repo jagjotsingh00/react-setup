@@ -20,6 +20,8 @@ import UseRefPractice, { FocusManagement, PreviousValue, RefVsState, VideoPlayer
 import { UnControlledInput } from './components/UseRefPractice'
 import useFetch from './components/useFetch'
 import { FetchHook } from './components/useFetchHook'
+import HigherOrderComponentsTutorial from './components/HigherOrderComponentsTutorial'
+import NewVariable from './components/Hoc'
 function App() {
 
   return (
@@ -89,6 +91,14 @@ function App() {
 =============================================================================================
 <br />
 < FetchHook /> 
+<br />
+=============================================================================================
+<br />
+< HigherOrderComponentsTutorial /> 
+<br />
+=============================================================================================
+<br />
+< NewVariable />
 </>
   )
 }
