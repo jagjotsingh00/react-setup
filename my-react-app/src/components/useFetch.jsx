@@ -1,3 +1,4 @@
+import { useState , useEffect } from "react";
 // Custom hook for data fetching
 function useFetch(url) {
   const [data, setData] = useState(null);

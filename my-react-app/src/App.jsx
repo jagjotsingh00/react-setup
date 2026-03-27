@@ -18,15 +18,19 @@ import LifeCyclePractice from './components/LifeCycleTask'
 import UseRefTutorial from './components/UseRefTutorial'
 import UseRefPractice, { FocusManagement, PreviousValue, RefVsState, VideoPlayer } from './components/UseRefPractice'
 import { UnControlledInput } from './components/UseRefPractice'
-import useFetch from './components/useFetch'
+import useFetch from './components/UseFetch'
 import { FetchHook } from './components/useFetchHook'
 import HigherOrderComponentsTutorial from './components/HigherOrderComponentsTutorial'
-import NewVariable from './components/Hoc'
+import NewVariable, { Example2_WithLoading, Example3_WithLogger, Example4_WithToggle } from './components/Hoc'
+import Example1_basicsHOC from './components/Hoc'
+import { Example1_ChildrenProp, Example2_CompoundComponents, Example3_RenderProps } from './components/Component-Composition'
+
 function App() {
+< Example1_basicsHOC />
 
   return (
     <>
-       <Navbar />
+       {/* <Navbar />
       <br />
  ============================================================================================= 
        <Header /> 
@@ -35,7 +39,6 @@ function App() {
       <div className='cards'>
         <Card />
         <Card />
-        {/* <Card /> */}
       </div><br />
 =============================================================================================
       <br />
@@ -62,7 +65,6 @@ function App() {
 =============================================================================================
       <Footer />
 =============================================================================================
-{/* <StudentList /> */}
 <br /><br />
 =============================================================================================
 <br />
@@ -70,7 +72,6 @@ function App() {
 <br />
 <br />
 =============================================================================================
-{/* <UseRefTutorial /> */}
 =============================================================================================
 <UseRefPractice/>
 =============================================================================================
@@ -91,14 +92,40 @@ function App() {
 =============================================================================================
 <br />
 < FetchHook /> 
+<br /> */}
+{/* ============================================================================================= */}
 <br />
+{/* < HigherOrderComponentsTutorial />  */}
+{/* <br />
 =============================================================================================
 <br />
-< HigherOrderComponentsTutorial /> 
+< NewVariable />  */}
+<br /><br />
+< Example1_basicsHOC />
+=============================================================================================
+
 <br />
+<Example2_WithLoading />
+=============================================================================================
+
+<br />
+<Example3_WithLogger />
+=============================================================================================
+
+<br />
+<br />
+< Example4_WithToggle />
 =============================================================================================
 <br />
-< NewVariable />
+<Example1_ChildrenProp />
+<br /><br />
+< Example2_CompoundComponents />
+=============================================================================================
+<br /> /
+< Example3_RenderProps />
+<br /><br />
+=============================================================================================
+
 </>
   )
 }

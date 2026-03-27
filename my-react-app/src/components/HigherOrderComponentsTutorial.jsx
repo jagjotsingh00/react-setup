@@ -117,62 +117,63 @@ function Example1_BasicHOC() {
   return (
     <div style={styles.example}>
       <h3>Basic HOC Pattern</h3>
-      
+
       <div style={styles.grid}>
         <div>
           <h4>Original Component:</h4>
           <UserCard name="Inder Singh" role="Senior Developer" />
         </div>
-        
+
         <div>
           <h4>With Border HOC:</h4>
           <BorderedUserCard name="Inder Singh" role="Senior Developer" />
         </div>
-        
+
         <div>
           <h4>With Title HOC:</h4>
           <TitledUserCard name="Inder Singh" role="Senior Developer" />
         </div>
       </div>
-      
+
       <div style={styles.grid}>
         <div>
           <h4>Stats - Original:</h4>
           <StatsCard label="Total Users" value="1,234" />
         </div>
-        
+
         <div>
           <h4>Stats - With Border:</h4>
           <BorderedStatsCard label="Total Users" value="1,234" />
         </div>
       </div>
-      
-      <div style={styles.explanation}>
-        💡 <strong>How HOCs Work:</strong><br/>
-        <br/>
-        1. HOC is a function that takes a component<br/>
-        2. Returns a new component with added functionality<br/>
-        3. Original component is wrapped, not modified<br/>
-        4. Props are passed through to original component<br/>
-        <br/>
+
+      <div style={styles.explanation}>      
+        💡 <strong>How HOCs Work:</strong><br />
+        <br />
+        1. HOC is a function that takes a component<br />
+        2. Returns a new component with added functionality<br />
+        3. Original component is wrapped, not modified<br />
+        4. Props are passed through to original component<br />
+        <br />
         <strong>Formula:</strong> EnhancedComponent = withFeature(OriginalComponent)
       </div>
-      
+
       <div style={styles.codeBox}>
         <h4>Basic HOC Structure:</h4>
-        <pre style={styles.code}>{`function withBorder(Component) {
-  return function WithBorder(props) {
-    return (
-      <div style={{ border: '2px solid blue' }}>
-        <Component {...props} />
-      </div>
-    );
-  };
-}
+        <pre style={styles.code}>
+          {`function withBorder(Component) {
+           return function WithBorder(props) {
+            return (
+              <div style={{ border: '2px solid blue' }}>
+                <Component {...props} />
+              </div>
+              );
+              };
+              }
 
-// Usage:
-const BorderedCard = withBorder(UserCard);
-<BorderedCard name="John" role="Developer" />`}</pre>
+              // Usage:
+              const BorderedCard = withBorder(UserCard);
+              <BorderedCard name="John" role="Developer" />`}</pre>
       </div>
     </div>
   );
@@ -194,7 +195,7 @@ function withLoading(Component) {
         </div>
       );
     }
-    
+
     return <Component {...props} />;
   };
 }
@@ -224,34 +225,34 @@ function Example2_WithLoading() {
     { id: 2, name: 'Rahul Kumar', role: 'Developer' },
     { id: 3, name: 'Priya Sharma', role: 'Designer' },
   ]);
-  
+
   const handleRefresh = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
   };
-  
+
   return (
     <div style={styles.example}>
       <h3>Example: withLoading HOC</h3>
-      
+
       <button onClick={handleRefresh} style={styles.button}>
         Refresh Data (Shows Loading)
       </button>
-      
+
       <UserListWithLoading isLoading={isLoading} users={users} />
-      
+
       <div style={styles.explanation}>
-        💡 <strong>withLoading Benefits:</strong><br/>
-        ✅ Reusable loading logic<br/>
-        ✅ Any component can use it<br/>
-        ✅ Consistent loading UI across app<br/>
-        ✅ Component doesn't need to handle loading state<br/>
-        <br/>
+        💡 <strong>withLoading Benefits:</strong><br />
+        ✅ Reusable loading logic<br />
+        ✅ Any component can use it<br />
+        ✅ Consistent loading UI across app<br />
+        ✅ Component doesn't need to handle loading state<br />
+        <br />
         <strong>Try it:</strong> Click "Refresh Data" to see loading state!
       </div>
-      
+
       <div style={styles.codeBox}>
         <h4>withLoading HOC:</h4>
         <pre style={styles.code}>{`function withLoading(Component) {
@@ -282,12 +283,12 @@ function withLogger(Component, componentName) {
     useEffect(() => {
       console.log(`[${componentName}] Mounted`);
       console.log(`[${componentName}] Props:`, props);
-      
+
       return () => {
         console.log(`[${componentName}] Unmounted`);
       };
     }, [props]);
-    
+
     return <Component {...props} />;
   };
 }
@@ -295,7 +296,7 @@ function withLogger(Component, componentName) {
 // Sample counter component
 function Counter({ initialCount = 0 }) {
   const [count, setCount] = useState(initialCount);
-  
+
   return (
     <div style={styles.counterBox}>
       <div style={styles.bigNumber}>{count}</div>
@@ -316,37 +317,37 @@ const CounterWithLogger = withLogger(Counter, 'Counter');
 
 function Example3_WithLogger() {
   const [showCounter, setShowCounter] = useState(true);
-  
+
   return (
     <div style={styles.example}>
       <h3>Example: withLogger HOC</h3>
-      
+
       <div style={styles.consoleWarning}>
         🔍 <strong>Open Console (F12) to see logs!</strong>
       </div>
-      
-      <button 
-        onClick={() => setShowCounter(!showCounter)} 
+
+      <button
+        onClick={() => setShowCounter(!showCounter)}
         style={styles.button}
       >
         {showCounter ? 'Unmount' : 'Mount'} Counter
       </button>
-      
+
       {showCounter && <CounterWithLogger initialCount={10} />}
-      
+
       <div style={styles.explanation}>
-        💡 <strong>withLogger Benefits:</strong><br/>
-        ✅ Debug component lifecycle easily<br/>
-        ✅ Track when components mount/unmount<br/>
-        ✅ See props being passed<br/>
-        ✅ Useful for development<br/>
-        <br/>
-        <strong>Console Logs:</strong><br/>
-        • "Mounted" when component appears<br/>
-        • "Props" showing what was passed<br/>
+        💡 <strong>withLogger Benefits:</strong><br />
+        ✅ Debug component lifecycle easily<br />
+        ✅ Track when components mount/unmount<br />
+        ✅ See props being passed<br />
+        ✅ Useful for development<br />
+        <br />
+        <strong>Console Logs:</strong><br />
+        • "Mounted" when component appears<br />
+        • "Props" showing what was passed<br />
         • "Unmounted" when component is removed
       </div>
-      
+
       <div style={styles.codeBox}>
         <h4>withLogger HOC:</h4>
         <pre style={styles.code}>{`function withLogger(Component, componentName) {
@@ -377,11 +378,11 @@ function Example3_WithLogger() {
 function withToggle(Component) {
   return function WithToggle(props) {
     const [isVisible, setIsVisible] = useState(true);
-    
+
     return (
       <div>
-        <button 
-          onClick={() => setIsVisible(!isVisible)} 
+        <button
+          onClick={() => setIsVisible(!isVisible)}
           style={styles.toggleButton}
         >
           {isVisible ? '👁️ Hide' : '👁️‍🗨️ Show'}
@@ -408,25 +409,25 @@ function Example4_WithToggle() {
   return (
     <div style={styles.example}>
       <h3>Example: withToggle HOC</h3>
-      
+
       <ToggleableContent
         title="React Best Practices"
         content="Always use keys in lists, avoid unnecessary re-renders, keep components small and focused, use custom hooks for reusable logic."
       />
-      
+
       <ToggleableContent
         title="JavaScript Tips"
         content="Use const and let instead of var, leverage destructuring, master async/await, understand closures and scope."
       />
-      
+
       <div style={styles.explanation}>
-        💡 <strong>withToggle Benefits:</strong><br/>
-        ✅ Any component becomes toggleable<br/>
-        ✅ Consistent toggle UI<br/>
-        ✅ No need to manage visibility state in each component<br/>
+        💡 <strong>withToggle Benefits:</strong><br />
+        ✅ Any component becomes toggleable<br />
+        ✅ Consistent toggle UI<br />
+        ✅ No need to manage visibility state in each component<br />
         ✅ Perfect for collapsible sections
       </div>
-      
+
       <div style={styles.codeBox}>
         <h4>withToggle HOC:</h4>
         <pre style={styles.code}>{`function withToggle(Component) {
@@ -480,7 +481,7 @@ function withUserInfo(Component) {
       company: 'NetSquare Softwares',
       role: 'Senior Developer'
     };
-    
+
     // Forward all original props + add new prop
     // return <Component {...props} userInfo={userInfo} />;
   };
@@ -490,7 +491,7 @@ function withUserInfo(Component) {
 function Dashboard({ title, userInfo }) {
   return (
     <div style={styles.dashboard}>
-      <h3>{}</h3>
+      <h3>{ }</h3>
       <div style={styles.userInfoBox}>
         <p><strong>Name:</strong> {userInfo.name}</p>
         <p><strong>Company:</strong> {userInfo.company}</p>
@@ -506,21 +507,21 @@ function Example5_PropsForwarding() {
   return (
     <div style={styles.example}>
       {/* <h3>Props Forwarding</h3> */}
-      
+
       <DashboardWithUserInfo title="Admin Dashboard" />
-      
+
       <div style={styles.explanation}>
-        💡 <strong>Props Forwarding Rules:</strong><br/>
-        <br/>
-        1. <strong>Always use {...props}</strong> to forward all props<br/>
-        2. You can add new props after spreading<br/>
-        3. New props can override original props if needed<br/>
-        4. Use destructuring to extract specific props<br/>
-        <br/>
-        <strong>Pattern:</strong><br/>
+        💡 <strong>Props Forwarding Rules:</strong><br />
+        <br />
+        1. <strong>Always use {...props}</strong> to forward all props<br />
+        2. You can add new props after spreading<br />
+        3. New props can override original props if needed<br />
+        4. Use destructuring to extract specific props<br />
+        <br />
+        <strong>Pattern:</strong><br />
         <code>{'<Component {...props} newProp={value} />'}</code>
       </div>
-      
+
       <div style={styles.codeBox}>
         <h4>Props Forwarding Examples:</h4>
         <pre style={styles.code}>{`// ✅ CORRECT: Forward all props
@@ -558,7 +559,7 @@ function withLogger(Component) {
 // Mock authentication service
 const authService = {
   currentUser: null,
-  
+
   login: (username, password) => {
     // Simulate login (accept any credentials for demo)
     authService.currentUser = {
@@ -570,15 +571,15 @@ const authService = {
     };
     return Promise.resolve(authService.currentUser);
   },
-  
+
   logout: () => {
     authService.currentUser = null;
   },
-  
+
   isAuthenticated: () => {
     return authService.currentUser !== null;
   },
-  
+
   getUser: () => {
     return authService.currentUser;
   }
@@ -589,13 +590,13 @@ function withAuth(Component) {
   return function WithAuth(props) {
     const [isAuthenticated, setIsAuthenticated] = useState(authService.isAuthenticated());
     const [user, setUser] = useState(authService.getUser());
-    
+
     useEffect(() => {
       // Check auth status on mount
       setIsAuthenticated(authService.isAuthenticated());
       setUser(authService.getUser());
     }, []);
-    
+
     if (!isAuthenticated) {
       return (
         <div style={styles.authRequired}>
@@ -605,7 +606,7 @@ function withAuth(Component) {
         </div>
       );
     }
-    
+
     // User is authenticated, show component with user info
     return <Component {...props} user={user} />;
   };
@@ -615,7 +616,7 @@ function withAuth(Component) {
 function withRole(Component, allowedRoles) {
   return function WithRole(props) {
     const user = authService.getUser();
-    
+
     if (!user) {
       return (
         <div style={styles.authRequired}>
@@ -623,7 +624,7 @@ function withRole(Component, allowedRoles) {
         </div>
       );
     }
-    
+
     if (!allowedRoles.includes(user.role)) {
       return (
         <div style={styles.authRequired}>
@@ -634,7 +635,7 @@ function withRole(Component, allowedRoles) {
         </div>
       );
     }
-    
+
     return <Component {...props} user={user} />;
   };
 }
@@ -708,7 +709,7 @@ function Project_AuthenticationWrapper() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [activeTab, setActiveTab] = useState('dashboard');
-  
+
   const handleLogin = (e) => {
     e.preventDefault();
     authService.login(username, password).then(() => {
@@ -717,21 +718,21 @@ function Project_AuthenticationWrapper() {
       setPassword('');
     });
   };
-  
+
   const handleLogout = () => {
     authService.logout();
     setIsLoggedIn(false);
     setActiveTab('dashboard');
   };
-  
+
   return (
     <div style={styles.example}>
       <h3>🎯 PROJECT: Authentication System</h3>
-      
+
       <div style={styles.projectInfo}>
         <strong>Features:</strong> withAuth HOC + withRole HOC + Protected Routes
       </div>
-      
+
       {!isLoggedIn ? (
         <div style={styles.loginContainer}>
           <h4>🔐 Login</h4>
@@ -794,7 +795,7 @@ function Project_AuthenticationWrapper() {
               Logout
             </button>
           </div>
-          
+
           <div style={styles.contentArea}>
             {activeTab === 'dashboard' && <ProtectedDashboard />}
             {activeTab === 'admin' && <AdminOnly />}
@@ -802,26 +803,26 @@ function Project_AuthenticationWrapper() {
           </div>
         </div>
       )}
-      
+
       <div style={styles.explanation}>
-        💡 <strong>How Authentication HOCs Work:</strong><br/>
-        <br/>
-        <strong>withAuth HOC:</strong><br/>
-        • Checks if user is logged in<br/>
-        • Shows login prompt if not authenticated<br/>
-        • Passes user data to protected component<br/>
-        <br/>
-        <strong>withRole HOC:</strong><br/>
-        • Checks user's role<br/>
-        • Only allows specific roles to access<br/>
-        • Shows "Access Denied" for unauthorized users<br/>
-        <br/>
-        <strong>Try it:</strong><br/>
-        1. Login with any credentials<br/>
-        2. Access Dashboard and Settings (allowed for all)<br/>
+        💡 <strong>How Authentication HOCs Work:</strong><br />
+        <br />
+        <strong>withAuth HOC:</strong><br />
+        • Checks if user is logged in<br />
+        • Shows login prompt if not authenticated<br />
+        • Passes user data to protected component<br />
+        <br />
+        <strong>withRole HOC:</strong><br />
+        • Checks user's role<br />
+        • Only allows specific roles to access<br />
+        • Shows "Access Denied" for unauthorized users<br />
+        <br />
+        <strong>Try it:</strong><br />
+        1. Login with any credentials<br />
+        2. Access Dashboard and Settings (allowed for all)<br />
         3. Try Admin Panel (requires admin role)
       </div>
-      
+
       <div style={styles.codeBox}>
         <h4>withAuth HOC Implementation:</h4>
         <pre style={styles.code}>{`function withAuth(Component) {
@@ -856,7 +857,7 @@ const AdminPanel = withRole(Panel, ['admin']);
 
 function HigherOrderComponentsTutorial() {
   const [activeExample, setActiveExample] = useState('intro');
-  
+
   const examples = [
     { id: 'intro', label: 'Introduction', component: IntroSection },
     { id: 'ex1', label: '1. Basic HOC', component: Example1_BasicHOC },
@@ -866,13 +867,13 @@ function HigherOrderComponentsTutorial() {
     // { id: 'ex5', label: '5. Props Forwarding', component: Example5_PropsForwarding },
     { id: 'project', label: '🎯 Auth System', component: Project_AuthenticationWrapper },
   ];
-  
+
   const ActiveComponent = examples.find(ex => ex.id === activeExample)?.component;
-  
+
   return (
     <div style={styles.app}>
       <h1 style={styles.mainTitle}>Higher Order Components (HOC) - Complete Tutorial</h1>
-      
+
       <div style={styles.navigation}>
         {examples.map(example => (
           <button
@@ -888,7 +889,7 @@ function HigherOrderComponentsTutorial() {
           </button>
         ))}
       </div>
-      
+
       <div style={styles.content}>
         {ActiveComponent && <ActiveComponent />}
       </div>
@@ -901,18 +902,18 @@ function IntroSection() {
   return (
     <div style={styles.intro}>
       <h2>Higher Order Components (HOC) 🎁</h2>
-      
+
       <div style={styles.section}>
         <h3>What is an HOC?</h3>
         <p>
-          A Higher Order Component is a <strong>function</strong> that takes a component 
+          A Higher Order Component is a <strong>function</strong> that takes a component
           and returns a new, enhanced component.
         </p>
         <div style={styles.formula}>
           <strong>Formula:</strong> HOC = (Component) → EnhancedComponent
         </div>
       </div>
-      
+
       <div style={styles.section}>
         <h3>Real-World Analogy:</h3>
         <div style={styles.analogyBox}>
@@ -925,7 +926,7 @@ function IntroSection() {
           </ul>
         </div>
       </div>
-      
+
       <div style={styles.section}>
         <h3>Common Use Cases:</h3>
         <div style={styles.useCaseGrid}>
@@ -947,7 +948,7 @@ function IntroSection() {
           </div>
         </div>
       </div>
-      
+
       <div style={styles.section}>
         <h3>Naming Convention:</h3>
         <p>HOCs should start with <code>with</code>:</p>
@@ -956,16 +957,16 @@ function IntroSection() {
           <li>❌ auth, loading, logger</li>
         </ul>
       </div>
-      
+
       <div style={styles.warningBox}>
         <h4>⚠️ Important Note:</h4>
         <p>
-          HOCs are an <strong>older pattern</strong>. Modern React prefers 
-          <strong> Custom Hooks</strong> for most cases. However, HOCs are 
+          HOCs are an <strong>older pattern</strong>. Modern React prefers
+          <strong> Custom Hooks</strong> for most cases. However, HOCs are
           still widely used in existing codebases and libraries (like Redux's connect).
         </p>
       </div>
-      
+
       <div style={styles.callout}>
         <h3>🎯 What You'll Learn</h3>
         <ul>
