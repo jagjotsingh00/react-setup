@@ -79,7 +79,7 @@ function Card({ children, title }) {
             <div>{children}</div>
         </div>
     );
-}
+} 
 
 function Button({ children, onClick }) {
     return (
@@ -94,7 +94,7 @@ function Container({ children }) {
 }
 
 function Example1_ChildrenProp() {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0)
 
     return (
         <Container>

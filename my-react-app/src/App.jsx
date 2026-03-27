@@ -24,6 +24,7 @@ import HigherOrderComponentsTutorial from './components/HigherOrderComponentsTut
 import NewVariable, { Example2_WithLoading, Example3_WithLogger, Example4_WithToggle } from './components/Hoc'
 import Example1_basicsHOC from './components/Hoc'
 import { Example1_ChildrenProp, Example2_CompoundComponents, Example3_RenderProps } from './components/Component-Composition'
+import { Example11_childrenprop } from './components/ComponentComposition'
 
 function App() {
 < Example1_basicsHOC />
@@ -125,7 +126,8 @@ function App() {
 < Example3_RenderProps />
 <br /><br />
 =============================================================================================
-
+<br />
+< Example11_childrenprop />
 </>
   )
 }

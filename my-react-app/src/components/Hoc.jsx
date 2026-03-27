@@ -157,7 +157,7 @@ function withLoading(Component) {
         if (isLoading) {
             return (
                 <div style={styles.loadingContainer}>
-                    <div styl></div>
+                    <div></div>
                     <p>Loading...</p>
                 </div>)
         }
