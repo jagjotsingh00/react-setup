@@ -25,6 +25,8 @@ import NewVariable, { Example2_WithLoading, Example3_WithLogger, Example4_WithTo
 import Example1_basicsHOC from './components/Hoc'
 import { Example1_ChildrenProp, Example2_CompoundComponents, Example3_RenderProps } from './components/Component-Composition'
 import { Example11_childrenprop, Example22_CompoundComponents, Example33_RenderProps } from './components/ComponentComposition'
+import ComponentCompositionTutorial from './components/ComponentCompositionTutorial'
+import ControlledForm from './components/FOrmValidation'
 
 function App() {
 < Example1_basicsHOC />
@@ -122,7 +124,7 @@ function App() {
 <br /><br />
 < Example2_CompoundComponents />
 =============================================================================================
-<br /> /
+<br /> 
 < Example3_RenderProps />
 <br /><br />
 =============================================================================================
@@ -131,9 +133,15 @@ function App() {
 <br />
 =============================================================================================
 <br />
+=============================================================================================
 <Example22_CompoundComponents />
 <br />
 <Example33_RenderProps />
+=============================================================================================
+<br />
+{/* <ComponentCompositionTutorial /> */}
+<br />
+< ControlledForm />
 </>
   )
 }
