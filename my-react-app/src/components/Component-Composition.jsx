@@ -132,7 +132,7 @@ function Tabs({ children, defaultTab = 0 }) {
     );
 }
 
-function Tab({ children, index }) {
+function Tab   ({ children, index }) {
     const { activeTab, setActiveTab } = useContext(TabsContext);
 
     return (
@@ -195,7 +195,7 @@ function Example3_RenderProps() {
 
             <div style={styles.toggleBox}>
                 <Toggle
-                    render={({ on, toggle }) => (
+                    render = {({ on, toggle }) => (
                         <>
                             <p>Status: {on ? "ON" : "OFF"}</p>
                             <button onClick={toggle} style={styles.button}>
